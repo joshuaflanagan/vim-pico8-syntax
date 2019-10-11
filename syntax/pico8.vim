@@ -16,6 +16,27 @@ let lua_subversion = 2
 " according to https://stackoverflow.com/a/16230190
 runtime! syntax/lua.vim syntax/lua/*.vim
 
+" pico-8 functions
+syn keyword pico8Func clip pget pset sget
+syn keyword pico8Func sset fget fset print
+syn keyword pico8Func cursor color cls camera
+syn keyword pico8Func circ circfill line rect
+syn keyword pico8Func rectfill pal palt spr
+syn keyword pico8Func sspr add del foreach
+syn keyword pico8Func btn btnp sfx music
+syn keyword pico8Func mget mset map peek
+syn keyword pico8Func poke memcpy reload cstore
+syn keyword pico8Func memset max min mid
+syn keyword pico8Func flr cos sin atan2
+syn keyword pico8Func sqrt abs rnd srand
+syn keyword pico8Func band bor bxor bnot
+syn keyword pico8Func shl shr sub all pairs
+syn keyword pico8Func assert type setmetatable
+syn keyword pico8Func cocreate coresume costatus yield
+syn keyword pico8Func sgn stat cartdata dget dset
+
+hi def link pico8Func Type
+
 let b:current_syntax = "pico8"
 
 let &cpo = s:cpo_save
