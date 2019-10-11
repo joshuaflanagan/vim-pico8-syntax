@@ -42,11 +42,14 @@ syn region pico8NonCode matchgroup=pico8Section start="__gfx__" end="notmatch"
 syn region pico8NonCode matchgroup=pico8Section start="__sfx__" end="notmatch"
 syn region pico8Header matchgroup=pico8Section start="^pico-8 cartridge" end="__lua__"
 
+syn match pico8NoCaps "[A-Z]"
+
 hi def link pico8Func Type
 hi def link pico8FuncDef PreProc
 hi def link pico8NonCode Folded
 hi def link pico8Header Folded
 hi def link pico8Section Folded
+hi def link pico8NoCaps Error
 
 let b:current_syntax = "pico8"
 
