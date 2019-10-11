@@ -16,6 +16,9 @@ let lua_subversion = 2
 " according to https://stackoverflow.com/a/16230190
 runtime! syntax/lua.vim syntax/lua/*.vim
 
+" override function block to use matchgroup pico8FuncDef instead of luaFunction
+syn region luaFunctionBlock transparent matchgroup=pico8FuncDef start="\<function\>" end="\<end\>" contains=ALLBUT,luaTodo,luaSpecial,luaElseifThen,luaElse,luaThenEnd,luaIn
+
 " pico-8 functions
 syn keyword pico8Func clip pget pset sget
 syn keyword pico8Func sset fget fset print
@@ -36,6 +39,7 @@ syn keyword pico8Func cocreate coresume costatus yield
 syn keyword pico8Func sgn stat cartdata dget dset
 
 hi def link pico8Func Type
+hi def link pico8FuncDef PreProc
 
 let b:current_syntax = "pico8"
 
